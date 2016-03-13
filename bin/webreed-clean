@@ -4,4 +4,4 @@
 // Licensed under the MIT license. See LICENSE file in the project root.
 
 
-console.log("RUN");
+require("../lib/command/clean");

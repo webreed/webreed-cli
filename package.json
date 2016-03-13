@@ -4,7 +4,7 @@
   "description": "Command line interface for webreed; a simple yet flexible static website generator.",
   "main": "lib/index.js",
   "bin": {
-    "webreed": "bin/webreed.js"
+    "webreed": "bin/webreed"
   },
   "scripts": {
     "prepublish": "npm run build",
@@ -15,6 +15,7 @@
   "author": "Rotorz Limited",
   "license": "MIT",
   "dependencies": {
+    "commander": "^2.9.0",
     "webreed": "^0.0.2"
   },
   "devDependencies": {
