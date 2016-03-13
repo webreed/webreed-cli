@@ -1,8 +1,11 @@
 {
   "name": "webreed-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Command line interface for webreed; a simple yet flexible static website generator.",
   "main": "lib/index.js",
+  "bin": {
+    "webreed": "bin/webreed.js"
+  },
   "scripts": {
     "prepublish": "npm run build",
     "build": "npm run clean && gulp build",
