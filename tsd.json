@@ -10,6 +10,9 @@
     },
     "commander/commander.d.ts": {
       "commit": "441b647ef77afa221d898fa2a9de47d9501b44e3"
+    },
+    "js-yaml/js-yaml.d.ts": {
+      "commit": "0cd5f0a1482dc3149f5446b1d885ef6ac7c57720"
     }
   }
 }

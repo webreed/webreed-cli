@@ -4,6 +4,8 @@
 
 import program = require("commander");
 
+import {init} from "../init";
+
 
 program
   .parse(process.argv);
@@ -11,4 +13,8 @@ program
 
 // Program Start:
 
-console.log("building...");
+let env = init(program.args[0]);
+
+console.log("Building...", env.projectRootPath);
+env.build()
+  .catch(err => console.error(err));
