@@ -2,6 +2,10 @@
   "name": "webreed-cli",
   "version": "0.0.2",
   "description": "Command line interface for webreed; a simple yet flexible static website generator.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webreed/webreed-cli"
+  },
   "main": "lib/index.js",
   "bin": {
     "webreed": "bin/webreed"
