@@ -1,6 +1,10 @@
-# webreed-cli [![Build Status](https://travis-ci.org/webreed/webreed-cli.svg?branch=master)](https://travis-ci.org/webreed/webreed-cli)
+# webreed-cli
 
 Command line interface for webreed; a simple yet flexible static website generator.
+
+[![Build Status](https://travis-ci.org/webreed/webreed-cli.svg?branch=master)](https://travis-ci.org/webreed/webreed-cli)
+[![Dependency Status](https://david-dm.org/webreed/webreed-cli.svg)](https://david-dm.org/webreed/webreed-cli)
+[![devDependency Status](https://david-dm.org/webreed/webreed-cli/dev-status.svg)](https://david-dm.org/webreed/webreed-cli#info=devDependencies)
 
 
 ## Installation
