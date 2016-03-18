@@ -13,8 +13,27 @@ program
 
 // Program Start:
 
-let env = init(program.args[0]);
+build();
 
-console.log("Building...", env.projectRootPath);
-env.build()
-  .catch(err => console.error(err));
+
+async function build(): Promise<void> {
+  try {
+    let env = init(program.args[0]);
+
+    console.log("Building...", env.projectRootPath);
+    await env.build();
+  }
+  catch (err) {
+    if (err.code === "WEBREED_INVALID_CONFIG") {
+      for (let issue of err.issues) {
+        console.error(`${err.name}: ${err.message}`);
+        console.log(`  ${ issue.field.substr(5) }: ${ issue.message }`);
+      }
+    }
+    else {
+      console.error(err.stack);
+    }
+
+    process.exit(1);
+  }
+}
