@@ -4,6 +4,9 @@
 
 import program = require("commander");
 
+import {handleError} from "../handleError";
+import {init} from "../init";
+
 
 program
   .parse(process.argv);
@@ -11,4 +14,13 @@ program
 
 // Program Start:
 
-console.log("cleaning...");
+(async function () {
+  try {
+    let env = init(program.args[0]);
+
+    console.log("Cleaning...", env.projectRootPath);
+  }
+  catch (err) {
+    handleError(err);
+  }
+})();
