@@ -19,6 +19,7 @@ program
     let env = init(program.args[0]);
 
     console.log("Cleaning...", env.projectRootPath);
+    await env.clean();
   }
   catch (err) {
     handleError(err);
