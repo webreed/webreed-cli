@@ -34,28 +34,28 @@ describe("init(projectRootPath)", function () {
       .should.be.eql(projectRootPath);
   });
 
-  it("throws error when webreed project does not contain a configuration file", function () {
+  it("throws error when directory does not contain a project configuration file", function () {
     let projectRootPath = path.join(__dirname, "fixtures/project-with-no-config");
     (() => init(projectRootPath))
-      .should.throw("Project does not contain a 'webreed-config.yaml' or 'webreed-config.json' file.");
+      .should.throw("Directory is not a webreed project because it does not contain a 'webreed-project.yaml' or 'webreed-project.json' file.");
   });
 
 
-  it("passes json configuration to webreed setup function", function () {
+  it("passes json project configuration to webreed setup function", function () {
     let projectRootPath = path.join(__dirname, "fixtures/project-with-json-config");
     let env = init(projectRootPath);
     env.baseUrl
       .should.be.eql("http://example.com/json");
   });
 
-  it("passes yaml configuration to webreed setup function", function () {
+  it("passes yaml project configuration to webreed setup function", function () {
     let projectRootPath = path.join(__dirname, "fixtures/project-with-yaml-config");
     let env = init(projectRootPath);
     env.baseUrl
       .should.be.eql("http://example.com/yaml");
   });
 
-  it("favors yaml configuration over json configuration when both are present", function () {
+  it("favors yaml project configuration over json when both are present", function () {
     let projectRootPath = path.join(__dirname, "fixtures/project-with-yaml-and-json-config");
     let env = init(projectRootPath);
     env.baseUrl

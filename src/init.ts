@@ -13,23 +13,23 @@ import {Environment} from "webreed-core/lib/Environment";
 
 export function init(projectRootPath: string): Environment {
   projectRootPath = path.resolve(projectRootPath || "");
-  let config = readConfig(projectRootPath);
+  let config = readWebreedProject(projectRootPath);
   return webreed(projectRootPath, config);
 }
 
 
-function readConfig(projectRootPath: string): any {
-  let yamlConfig = getFileContents(projectRootPath, "webreed-config.yaml");
+function readWebreedProject(projectRootPath: string): any {
+  let yamlConfig = getFileContents(projectRootPath, "webreed-project.yaml");
   if (yamlConfig !== null) {
     return yaml.safeLoad(yamlConfig);
   }
 
-  let jsonConfig = getFileContents(projectRootPath, "webreed-config.json");
+  let jsonConfig = getFileContents(projectRootPath, "webreed-project.json");
   if (jsonConfig !== null) {
     return JSON.parse(jsonConfig);
   }
 
-  throw new Error("Project does not contain a 'webreed-config.yaml' or 'webreed-config.json' file.")
+  throw new Error("Directory is not a webreed project because it does not contain a 'webreed-project.yaml' or 'webreed-project.json' file.")
 }
 
 function getFileContents(projectRootPath: string, fileName: string): string {
